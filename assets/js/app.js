@@ -1,7 +1,7 @@
 $(document).ready(function (){
 
     // initial list of button and giphy searches available
-    var ams = ['leek', 'potato'];
+    var ams = ['leek', 'potato', 'pie', 'beer'];
 
 
     //draws search buttons to buttons div
@@ -34,7 +34,7 @@ $(document).ready(function (){
             var gifs = result.data;
         //should add still, active and status attributes to images
             for (var i = 0; i < gifs.length; i++) {
-                var newDiv = $('<div>');
+                var newDiv = $('<div class="dif">');
                 var newgif = $('<img class=gif>');
                 newgif.attr('src', gifs[i].images.original_still.url);
                 newgif.attr('data-still', gifs[i].images.original_still.url);
@@ -67,8 +67,12 @@ $(document).ready(function (){
     $('#addbtn').on('click', function(event) {
         event.preventDefault()
         var newSearch = $('#gif-input').val().trim();
-        ams.push(newSearch);
-        btndraw();
+        //only works if search is filled
+        if (newSearch != '') {
+          ams.push(newSearch);
+          btndraw();  
+        }
+        
     })
 
 
