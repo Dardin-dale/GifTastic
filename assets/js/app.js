@@ -43,6 +43,8 @@ $(document).ready(function (){
                 newDiv.append('<p>Title: ' + gifs[i].title.replace(' GIF', '') + '</p>');
                 newDiv.append(newgif);
                 newDiv.append('<p>Rating: '+ gifs[i].rating + '</p>');
+                // TODO: append download button
+                //button will need mp4 data attribute
                 $('#results').prepend(newDiv, '<br>');
             }
         });
@@ -74,6 +76,13 @@ $(document).ready(function (){
         }
         
     })
+
+    // TODO: make download button function
+    /*$('document').on('click', '.download' function(event) {
+          var blob = new Blob([gify], stuff)
+          saveAs(blob, params) <-- HTML5 function
+    })
+    */
 
 
     btndraw();
