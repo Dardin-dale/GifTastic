@@ -26,7 +26,7 @@ $(document).ready(function (){
         //increment page number on click
         $(this).attr('data-pgnum', pg + 10);
         
-        $.get({url:'https://api.giphy.com/v1/gifs/search?q=' +
+        $.get({url:'http://api.giphy.com/v1/gifs/search?q=' +
             term + '&offset='+ pg +'&api_key=Qxbopc4Kv6gJdM4Ow5mXPH1DhplWmzyP&limit=10'})
 
         //adds the gifs to the page
